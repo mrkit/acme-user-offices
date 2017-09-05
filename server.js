@@ -24,6 +24,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/users', usersRoutes);
 app.use('offices', officesRoutes);
 
+app.get('/', (req, res) => {
+  res.render('offices')
+});
+
 //error catching (catch all)
 app.use((err, req, res, next) => {
   if(err) console.log(err.message);
